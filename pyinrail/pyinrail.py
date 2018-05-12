@@ -23,13 +23,13 @@ class RailwayEnquiry:
         """
         self.session = {}
         
-        if not os.path.exists('./stations.json'):
+        if not os.path.exists(os.path.join(os.path.dirname(__file__), 'stations.json')):
             self.load_stations()
-        self.stations = json.load(open('stations.json'))
+        self.stations = json.load(open(os.path.join(os.path.dirname(__file__), 'stations.json')))
         
-        if not os.path.exists('./trains.json'):
+        if not os.path.exists(os.path.join(os.path.dirname(__file__), 'trains.json')):
             self.load_trains()
-        self.trains = json.load(open('trains.json'))
+        self.trains = json.load(open(os.path.join(os.path.dirname(__file__), 'trains.json')))
         
         self.src = self.get_stn_code(src) if src else None
         self.dest = self.get_stn_code(dest) if dest else None
@@ -75,7 +75,7 @@ class RailwayEnquiry:
         for station in r.json():
             key = station.split(' - ')[1]
             data[key] = station
-        with open("stations.json", "w") as f:
+        with open(os.path.join(os.path.dirname(__file__), 'stations.json'), "w") as f:
             f.write(json.dumps(data))
    
 
@@ -90,7 +90,7 @@ class RailwayEnquiry:
         for train in r.json():
             key = train.split(' - ')[0]
             data[key] = train
-        with open("trains.json", "w") as f:
+        with open(os.path.join(os.path.dirname(__file__), 'trains.json'), "w") as f:
             f.write(json.dumps(data))
             
             
