@@ -393,7 +393,7 @@ class RailwayEnquiry:
             for c in train['avlClasses']:
                 train_params = {'src': train['fromStnCode'], 'dest': train['toStnCode'], 'date': date, 'classc': c}
                 status_df = self.get_seat_availability(train['trainNumber'], **train_params, as_df=True)
-                status_df = status_df[status_df['availablityStatus'].str.contains('AVAILABLE')]
+                status_df = status_df[status_df['availablityStatus'].str.contains('AVAILABLE-')]
                 if len(status_df):
                     print(c, self.get_train_fare(train['trainNumber'], **train_params)['totalFare'])
                     display(status_df)
