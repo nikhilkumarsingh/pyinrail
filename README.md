@@ -14,6 +14,8 @@ A python wrapper for Indian Railways Enquiry API!
 
 ...and much more!
 
+**Note:** This is not an official package and using it for commercial purposes is not recommended.
+
 ## Installation
 
 To install pyinrail, simply,
