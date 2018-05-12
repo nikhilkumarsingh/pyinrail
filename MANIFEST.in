@@ -1,0 +1,3 @@
+include README.rst
+include pyinrail/stations.json
+include pyinrail/trains.json
