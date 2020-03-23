@@ -29,6 +29,6 @@ setup(name='pyinrail',
 	author_email='nikhilksingh97@gmail.com',
 	license='MIT',
 	packages=['pyinrail'],
-	install_requires=['requests',  'demjson', 'pandas', 'Pillow', 'pytesseract', 'fuzzywuzzy'],
+	install_requires=['requests',  'demjson', 'pandas', 'Pillow', 'pytesseract', 'rapidfuzz'],
 	include_package_data=True,
 	zip_safe=False)

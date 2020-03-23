@@ -7,7 +7,7 @@ import demjson
 import pytesseract
 import pandas as pd
 from PIL import Image
-from fuzzywuzzy import process
+from rapidfuzz import process
 
 from .utils import *
 
